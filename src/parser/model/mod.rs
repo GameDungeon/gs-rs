@@ -31,7 +31,7 @@ pub struct FactorGraphModel {
 }
 
 /// Structure containing a factor graph model's vertex, representing a variable.
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Vertex {
     /// The vertex's ID. Should be unique within the factor graph.
     pub id: usize,
