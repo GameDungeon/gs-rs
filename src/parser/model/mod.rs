@@ -19,7 +19,7 @@ use std::fmt::Debug;
 mod converter;
 
 /// Structure containing the serializable model of a factor graph.
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct FactorGraphModel {
     /// All vertices in the factor graph.
     pub vertices: Vec<Vertex>,
@@ -51,7 +51,7 @@ pub struct Vertex {
 }
 
 /// Structure containing a factor graph model's edge, representing a factor.
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Edge {
     /// The edge's type. Supported types: "Position2D", "Odometry2D", "Observation2D"
     #[serde(rename = "type")]
